@@ -13,7 +13,6 @@
 - Uses LZW compression which was pretty patent encumbered
 - Interlace option to allow a rough version of an image to be displayed before the full image has been transmitted
 
-![](http://matthewflickinger.com/lab/whatsinagif/images/gif_file_stream.gif)
 ![](DraggedImage.png)
 
 Read more - [http://matthewflickinger.com/lab/whatsinagif/bits\_and\_bytes.asp](http://matthewflickinger.com/lab/whatsinagif/bits_and_bytes.asp)
