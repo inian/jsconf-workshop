@@ -62,6 +62,13 @@ The main advantage of using the YCbCr model is that the brightness channel is se
 - EXIF container format is more advanced and can contain metadata information about the picture
 
 ## Exercise 1 - Generational loss
+[https://petapixel.com/2016/04/06/happens-resave-image/](https://petapixel.com/2016/04/06/happens-resave-image/)
+[https://cloudinary.com/blog/why\_jpeg\_is\_like\_a\_photocopier](https://cloudinary.com/blog/why_jpeg_is_like_a_photocopier)
+- JPEG is a lossy format
+- if you save JPEG at 80 and then at 90, the image will look worse even though the quality is higher
+- how to avoid generational loss
+- how to avoid generational loss
+- taking smaller images seem to work better for this experiment
 ## Exercise 2 - Chroma subsampling
 ## Exercise 3 - EXIF tool
 
