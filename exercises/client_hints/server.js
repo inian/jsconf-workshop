@@ -25,6 +25,7 @@ const serveFile = async (path, req, res) => {
       res.end(file);
     } else if (path.endsWith(".jpg")) {
       res.setHeader("Content-Type", "image/jpg");
+      res.setHeader("Content-DPR", req.headers.dpr);
       const resizedImage = await sharp(file)
         .resize(parseInt(req.headers.width, 10))
         .toBuffer();
