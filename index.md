@@ -1,7 +1,5 @@
 # Advanced Image Optimisation
 
-## Workshop Overview
-
 ## Why images are important for performance
 
 ## Overview of different image formats
@@ -14,8 +12,7 @@
 - Interlace option to allow a rough version of an image to be displayed before the full image has been transmitted
 
 ![](DraggedImage.png)
-
-Read more - [http://matthewflickinger.com/lab/whatsinagif/bits\_and\_bytes.asp](http://matthewflickinger.com/lab/whatsinagif/bits_and_bytes.asp)
+[http://matthewflickinger.com/lab/whatsinagif/bits\_and\_bytes.asp](http://matthewflickinger.com/lab/whatsinagif/bits_and_bytes.asp)
 
 ### PNG
 - Problems with GIF lead to creation of PNG
@@ -41,7 +38,7 @@ Ancillary chunks can be safely ignored. A decoder must be able to interpret crit
 ##### PNG compression
 ###### Prediction / Filtering
 ![](DraggedImage-3.png)
-Read more [here](https://medium.com/@duhroach/how-png-works-f1174e3cc7b7)
+[https://medium.com/@duhroach/how-png-works-f1174e3cc7b7](https://medium.com/@duhroach/how-png-works-f1174e3cc7b7)
 ###### Deflate
 - descendant of LZ77 algorithm
 - combines LZ77 with Huffman encoding
@@ -64,13 +61,37 @@ The main advantage of using the YCbCr model is that the brightness channel is se
 ## Exercise 1 - Generational loss
 [https://petapixel.com/2016/04/06/happens-resave-image/](https://petapixel.com/2016/04/06/happens-resave-image/)
 [https://cloudinary.com/blog/why\_jpeg\_is\_like\_a\_photocopier](https://cloudinary.com/blog/why_jpeg_is_like_a_photocopier)
+[https://photo.stackexchange.com/questions/99604/what-factors-cause-or-prevent-generational-loss-when-jpegs-are-recompressed-mu](https://photo.stackexchange.com/questions/99604/what-factors-cause-or-prevent-generational-loss-when-jpegs-are-recompressed-mu)
+[https://www.reddit.com/r/programming/comments/4dg2t5/generation\_loss\_comparison\_of\_flif\_webp\_and\_jpeg/d1qwwk8/?context=8&depth=9](https://www.reddit.com/r/programming/comments/4dg2t5/generation_loss_comparison_of_flif_webp_and_jpeg/d1qwwk8/?context=8&depth=9)
 - JPEG is a lossy format
 - if you save JPEG at 80 and then at 90, the image will look worse even though the quality is higher
 - how to avoid generational loss
-- how to avoid generational loss
 - taking smaller images seem to work better for this experiment
+- if you use a constant quality instead of a random quality, there will be convergence after sometime
 ## Exercise 2 - Chroma subsampling
 ## Exercise 3 - EXIF tool
+- Download images from different social networks and see what metadata they have if any
+- [https://dexecure.com/blog/impact-of-metadata-on-image-performance/](https://dexecure.com/blog/impact-of-metadata-on-image-performance/)
+- [http://exif.regex.info/exif.cgi](http://exif.regex.info/exif.cgi)
+- [https://parametric.press/issue-01/unraveling-the-jpeg/](https://parametric.press/issue-01/unraveling-the-jpeg/)
 
-
-Read more [here](https://parametric.press/issue-01/unraveling-the-jpeg/) (Unravelling the JPEG)
+## Client Hints
+- sent for same origin domains
+- sent for cross-origin domains only on android mobile devices (emulation doesn’t work)
+- sent only https or localhost
+- [https://developers.google.com/web/updates/2015/09/automating-resource-selection-with-client-hints](https://developers.google.com/web/updates/2015/09/automating-resource-selection-with-client-hints)
+## Image decoding
+- [https://dexecure.com/blog/image-decoding/](https://dexecure.com/blog/image-decoding/)
+## DSSIM
+- [https://github.com/kornelski/dssim](https://github.com/kornelski/dssim)
+## Network based image optimisation
+- [https://dexecure.com/blog/network-based-asset-optimization/](https://dexecure.com/blog/network-based-asset-optimization/)
+## LQIP
+- [https://github.com/fogleman/primitive](https://github.com/fogleman/primitive)
+- [https://github.com/technopagan/sqip](https://github.com/technopagan/sqip)
+- [https://github.com/zouhir/lqip](https://github.com/zouhir/lqip)
+## Video in Safari exercise
+## Lazy Loading in website
+- [https://developers.google.com/web/fundamentals/performance/lazy-loading-guidance/images-and-video/](https://developers.google.com/web/fundamentals/performance/lazy-loading-guidance/images-and-video/)
+## Challenges in building an image optimisation pipeline
+- Our previous architecture [https://www.youtube.com/watch?v=dD71X0lXUqI](https://www.youtube.com/watch?v=dD71X0lXUqI)
