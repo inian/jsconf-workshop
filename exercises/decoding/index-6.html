@@ -1,0 +1,22 @@
+<html>
+  <body>
+    <div class="jank-detector">
+      Random numbers, to highlight jank:
+      <span class="rand"></span>
+    </div>
+    <script>
+      const rand = document.querySelector(".rand");
+      function randFrame() {
+        rand.textContent = Math.random();
+        requestAnimationFrame(randFrame);
+      }
+      randFrame();
+    </script>
+    <img
+      decoding="async"
+      width="1400 "
+      src="https://res.cloudinary.com/demo/image/upload/f_auto,w_1400/q_1/string_1.jpg?sdfwe"
+    />
+    <br />
+  </body>
+</html>

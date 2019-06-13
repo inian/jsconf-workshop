@@ -1,0 +1,39 @@
+<html>
+  <body>
+    <div class="jank-detector">
+      Random numbers, to highlight jank:
+      <span class="rand"></span>
+    </div>
+    <script>
+      const rand = document.querySelector(".rand");
+      function randFrame() {
+        rand.textContent = Math.random();
+        requestAnimationFrame(randFrame);
+      }
+      randFrame();
+    </script>
+    <script>
+      function onloadImg() {
+        setTimeout(() => {
+          const img = new Image();
+          img.width = 1400;
+          // try to force browser to decode asynchronously
+          img.decoding = "sync";
+          img.src = `https://res.cloudinary.com/demo/image/upload/f_auto,w_6400/q_1/string_1.jpg?${Date.now()}`;
+          img.onload = () => {
+            const orig = document.getElementById("orig");
+            orig.parentElement.replaceChild(img, orig);
+          };
+        }, 3000);
+      }
+    </script>
+    <div id="sdf"></div>
+    <img
+      id="orig"
+      width="1400"
+      onload="onloadImg()"
+      src="https://res.cloudinary.com/demo/image/upload/e_blur:1000,w_6400/q_1/string_1.jpg"
+    />
+    <br />
+  </body>
+</html>
