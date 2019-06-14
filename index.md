@@ -1,5 +1,17 @@
 # Advanced Image Optimisation
-
+## Tools required for the workshop
+- Imagemagick
+- ffmpeg
+- git
+- Node.js v10
+- RUST
+- Clone [https://github.com/inian/jsconf-workshop](https://github.com/inian/jsconf-workshop) 
+(Or)
+Clone the docker image 
+> docker pull everconfusedguy/jsconf-workshop:v1
+> docker run -v /path/to/a/local/folder:/vol -it everconfusedguy/jsconf-workshop:v1 /bin/bash
+> cd /home/jsconf/jsconf-workshop
+> git pull
 ## Why images are important for performance
 
 ## Overview of different image formats
@@ -57,7 +69,9 @@ The main advantage of using the YCbCr model is that the brightness channel is se
 - Has two parts - the container and the payload
 - Two major types of containers used - JPEG File Interchange Format (JFIF) and  Exchangeable Image File Format (EXIF). 
 - EXIF container format is more advanced and can contain metadata information about the picture
+- [https://parametric.press/issue-01/unraveling-the-jpeg/](https://parametric.press/issue-01/unraveling-the-jpeg/)
 
+### WebP and other browser specific image formats
 ## Exercise 1 - Generational loss
 [https://petapixel.com/2016/04/06/happens-resave-image/](https://petapixel.com/2016/04/06/happens-resave-image/)
 [https://cloudinary.com/blog/why\_jpeg\_is\_like\_a\_photocopier](https://cloudinary.com/blog/why_jpeg_is_like_a_photocopier)
@@ -69,12 +83,13 @@ The main advantage of using the YCbCr model is that the brightness channel is se
 - taking smaller images seem to work better for this experiment
 - if you use a constant quality instead of a random quality, there will be convergence after sometime
 ## Exercise 2 - Chroma subsampling
-## Exercise 3 - EXIF tool
+## Exercise 3 - Progressive JPEGs
+- Install Mozjpeg ([https://github.com/mozilla/mozjpeg/blob/master/BUILDING.md](https://github.com/mozilla/mozjpeg/blob/master/BUILDING.md))
+- convert -strip -interlace Plane input.jpg output.jpg
+## Exercise 4 - EXIF tool
 - Download images from different social networks and see what metadata they have if any
 - [https://dexecure.com/blog/impact-of-metadata-on-image-performance/](https://dexecure.com/blog/impact-of-metadata-on-image-performance/)
 - [http://exif.regex.info/exif.cgi](http://exif.regex.info/exif.cgi)
-- [https://parametric.press/issue-01/unraveling-the-jpeg/](https://parametric.press/issue-01/unraveling-the-jpeg/)
-
 ## Client Hints
 - sent for same origin domains
 - sent for cross-origin domains only on android mobile devices (emulation doesn’t work)
@@ -91,7 +106,23 @@ The main advantage of using the YCbCr model is that the brightness channel is se
 - [https://github.com/technopagan/sqip](https://github.com/technopagan/sqip)
 - [https://github.com/zouhir/lqip](https://github.com/zouhir/lqip)
 ## Video in Safari exercise
+### Advantages
+- Videos are much more efficient formats than GIFs in terms of size and decode speeds
+- Very less change to markup required to take advantage of this
+### Disadvantages
+- Videos are not caught by the lookahead scanner
+- Newer image formats like AV1 which are based on video frames are coming to browsers soon, making this only as a stopgap solution
 ## Lazy Loading in website
 - [https://developers.google.com/web/fundamentals/performance/lazy-loading-guidance/images-and-video/](https://developers.google.com/web/fundamentals/performance/lazy-loading-guidance/images-and-video/)
+## Dexecure Demo
+- [https://dexecure.com/products/](https://dexecure.com/products/)
 ## Challenges in building an image optimisation pipeline
 - Our previous architecture [https://www.youtube.com/watch?v=dD71X0lXUqI](https://www.youtube.com/watch?v=dD71X0lXUqI)
+- Scalability: Image processing in pretty compute intensive
+	- Spot instances
+- Bursty workloads 
+	- Traffic can spike 5x during a new deploy for example 
+- The web is messy
+	- images without correct headers (like s3)
+	- images with wrong headers
+	- Polyglot files
