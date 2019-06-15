@@ -118,6 +118,7 @@ Disadvantages
 - [https://github.com/fogleman/primitive](https://github.com/fogleman/primitive)
 - [https://github.com/technopagan/sqip](https://github.com/technopagan/sqip)
 - [https://github.com/zouhir/lqip](https://github.com/zouhir/lqip)
+- https://coldstorage.dexecure.net/media/cms/banners/homepage\_banner\_-\_moet\_chandon\_june\_2019-20190603155329.jpg?format=lqip
 ## Video in Safari exercise
 ### Advantages
 - Videos are much more efficient formats than GIFs in terms of size and decode speeds
