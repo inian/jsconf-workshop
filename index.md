@@ -8,8 +8,11 @@
 - Node.js v10
 - RUST
 - Clone [https://github.com/inian/jsconf-workshop](https://github.com/inian/jsconf-workshop)
+
   (Or)
+
   Clone the docker image
+
   > docker pull everconfusedguy/jsconf-workshop:v1  
   > docker run -v /path/to/a/local/folder:/vol -it everconfusedguy/jsconf-workshop:v1 /bin/bash  
   > cd /home/jsconf/jsconf-workshop  
