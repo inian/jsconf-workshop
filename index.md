@@ -186,9 +186,15 @@ The main advantage of using the YCbCr model is that the brightness channel is se
 ## Challenges in building an image optimisation pipeline
 
 - Our previous architecture [https://www.youtube.com/watch?v=dD71X0lXUqI](https://www.youtube.com/watch?v=dD71X0lXUqI)
-- Scalability: Image processing in pretty compute intensive - Spot instances - Asynchronous architecture
-- Bursty workloads - Traffic can spike 5x during a new deploy for example
-- The web is messy - images without correct headers (like s3) - images with wrong headers - Polyglot files
+- Scalability: Image processing in pretty compute intensive
+  - Spot instances
+  - Asynchronous architecture
+- Bursty workloads
+  - Traffic can spike 5x during a new deploy for example
+- The web is messy
+  - images without correct headers (like s3)
+  - images with wrong headers
+  - Polyglot files
 - Working with different caching headers
 - Working with different CDNs
 
