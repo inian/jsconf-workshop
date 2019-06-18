@@ -1,7 +1,7 @@
 # Advanced Image Optimisation
 
 ## Tools required for the workshop
-
+## Install these if you haven't already, We will start the workshop at 1.10
 - Imagemagick
 - ffmpeg
 - git
